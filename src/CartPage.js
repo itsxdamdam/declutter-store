@@ -2,7 +2,6 @@ import React from 'react'
 import Item from './Item';
 
 const summarizer = (result, item) => {
-  console.log(result)
   const existingItem = result.find(i => i.id === item.id)
 
   if(!existingItem) {
