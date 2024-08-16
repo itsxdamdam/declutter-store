@@ -28,6 +28,12 @@ const CartPage = ({ items }) => {
           </Item>
         ))}
       </ul> 
+      <div className="total">
+        Total: $
+        {cart.reduce((total, item) => {
+          return total + item.price * item.count
+        }, 0)}
+      </div>
     </div>
   )
 };

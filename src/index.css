@@ -115,3 +115,13 @@ a:visited {
 .Item .add:focus {
   outline: none;
 }
+
+/* CartPage */
+.CartPage ul {
+  margin-bottom: 1em;
+}
+
+.CartPage .total {
+  text-align: right;
+  margin-right: 10px;
+}
