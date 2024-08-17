@@ -3,7 +3,7 @@ import Item from './Item';
 
 const summarizer = (result, item) => {
   const existingItem = result.find(i => i.id === item.id)
-
+ 
   if(!existingItem) {
     result.push({
       ...item,
@@ -16,7 +16,7 @@ const summarizer = (result, item) => {
   return result;
 }
 
-const CartPage = ({ items }) => {
+const CartPage = ({ items, onPageChange }) => {
   const cart = items.reduce(summarizer, [])
   return (
     <div className="CartPage">
@@ -33,6 +33,11 @@ const CartPage = ({ items }) => {
           return total + item.price * item.count
         }, 0)}
       </div>
+      <button 
+        onClick={
+          () => onPageChange('checkout')
+        }
+      >Checkout Now</button>
     </div>
   )
 };
